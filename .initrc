@@ -1,0 +1,12 @@
+export LANG=zh_CN.utf-8
+export LANGUAGE=zh_CN.utf-8
+export EDITOR=vim
+export TERM=xterm-256color
+export PATH=$HOME/.bin:/Development/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
+
+if [ -d $HOME/.dircolors ]; then
+    eval `dircolors -b $HOME/.dircolors/dircolors.256dark`
+    alias ls='ls --color -hF'
+fi
+
+source $HOME/.aliases
