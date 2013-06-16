@@ -1,7 +1,9 @@
 set nocompatible
 
 " vundle configure
+filetype off
 if (has("win32") || has("win64"))
+    source $VIMRUNTIME/mswin.vim
     let $HOME=$USERPROFILE
 endif
 let $VIMFILES=$HOME.'/.vim'
@@ -11,6 +13,7 @@ call vundle#rc()
 " require
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'L9'
 
@@ -189,6 +192,24 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType php setlocal omnifunc=phpcomplete#CompleteTags
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+
+" tab
+nmap <C-M> :tab split<CR>
+nmap <C-N> :tabnext<CR>
+nmap <C-P> :tabprevious<CR>
+vnoremap < <gv
+vnoremap > >gv
+
+
+" NERDTREE
+map tree :NERDTree <cr>
+map nc :NERDTreeClose <cr>
+map bk :Bookmark
+map to :BookmarkToRoot
+map tof ::OpenBookmark
+map cbk :ClearBookmarks
+map cbkall :ClearAllBookmarks
+map tl :Tlist
 
 " taglist
 set tags=$HOME/.tags
