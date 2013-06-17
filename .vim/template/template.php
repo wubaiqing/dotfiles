@@ -2,6 +2,6 @@
 /**
  * description
  *
- * @author likai<youyuge@gmail.com>
- * @link http://www.youyuge.com/
+ * @author wubaiqing<[wubaiqing@vip.qq.com]>
+ * @link http://wubaiqing.com/
  */
