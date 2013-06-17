@@ -16,5 +16,3 @@ git submodule init
 git submodule update
 ./install.sh
 ```
-
-**Well enjoy it!**
