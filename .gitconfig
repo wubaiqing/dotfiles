@@ -1,0 +1,19 @@
+[alias]
+	st = status
+	br = branch
+	ci = commit
+	co = checkout
+     p = push
+[user]
+	name = wubaiqing
+	email = wubaiqing@vip.qq.com
+[color]
+    ui = auto
+[merge]
+    log = true
+[diff]
+        tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+        cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[alias]
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
