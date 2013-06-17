@@ -3,7 +3,7 @@
 ## Depend
 
 * vundle (vim plugin)
-* GNU Core Utils
+* GNU Coreutils
 * monaco powerline-font
 
 ## Installation
