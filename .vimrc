@@ -108,7 +108,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
-set expandtab
+" set expandtab
 
 " misc
 set history=1000
@@ -166,7 +166,6 @@ noremap <C-Q> <C-V>
 let NERDTreeShowHidden=0
 let g:NERDTreeChristmasTree=1
 let g:NERDTreeCaseSensitiveSort=1
-let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeWinPos='left'
 let g:NERDTreeWinSize=40
 let g:NERDTreeChDirMode=2
@@ -188,10 +187,10 @@ let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_min_syntax_length=3
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType php setlocal omnifunc=phpcomplete#CompleteTags
-autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType php,html setlocal omnifunc=phpcomplete#CompleteTags
+autocmd FileType php,html setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType html,markdown,php setlocal omnifunc=htmlcomplete#CompleteTags
 
 " tab
 nmap <C-M> :tab split<CR>
@@ -218,6 +217,7 @@ let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_Auto_Update = 1
+
 
 " neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)

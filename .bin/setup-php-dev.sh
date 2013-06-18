@@ -16,7 +16,6 @@ brew install php54-apc php54-mcrypt php54-xdebug
 echo "
  
 [apc]
-extension = \"`brew --prefix php54-apc`/apc.so\"
 apc.enabled = 1
 apc.shm_segments = 1
 apc.shm_size = 64M
@@ -27,7 +26,6 @@ apc.mmap_file_mask = /tmp/apc.XXXXXX
 apc.enable_cli = 1
  
 [xdebug]
-zend_extension = \"`brew --prefix php54-xdebug`/xdebug.so\"
 xdebug.remote_enable = 1
 ; use port 9009 because php-fpm uses 9000 by default
 xdebug.remote_port = 9009
