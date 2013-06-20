@@ -62,6 +62,9 @@ Bundle 'peaksea'
 Bundle 'Zenburn'
 Bundle 'tango.vim'
 
+" sudo vim
+Bundle "sudo.vim"
+
 " global
 filetype on
 filetype plugin indent on
