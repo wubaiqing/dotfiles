@@ -88,6 +88,7 @@ set showcmd
 set cursorline
 set sidescrolloff=20
 "set pumheight=10
+set nowrap
 
 " ime
 "set noimdisable
@@ -190,23 +191,32 @@ let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_min_syntax_length=3
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType php,html setlocal omnifunc=phpcomplete#CompleteTags
-autocmd FileType php,html setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType html,markdown,php setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType php setlocal omnifunc=phpcomplete#CompleteTags
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 
 " tab
 nmap <C-M> :tab split<CR>
 nmap <C-N> :tabnext<CR>
 nmap <C-P> :tabprevious<CR>
+
+" visual
 vnoremap < <gv
 vnoremap > >gv
 
+" insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap <C-d> <DELETE>
 
 " NERDTREE
 map tree :NERDTree <cr>
 map nc :NERDTreeClose <cr>
 map bk :Bookmark
+map tf :set filetype=
 map to :BookmarkToRoot
 map tof ::OpenBookmark
 map cbk :ClearBookmarks
@@ -241,4 +251,4 @@ autocmd BufNewFile *.php  0r $VIMFILES/template/template.php
 autocmd BufNewFile *.html  0r $VIMFILES/template/template.html
 
 " compiler
-autocmd FileType c nmap <leader><leader>r :!cc -o "%:p:r" "%:p" && "%:p:r"<CR>
+autocmd FileType c nmap <leader><leade,>r :!cc -o "%:p:r" "%:p" && "%:p:r"<CR>
