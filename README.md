@@ -62,14 +62,14 @@ Commands
 
 
 Depend
-______
+------
 
 * vundle (vim plugin)
 * GNU Coreutils
 * monaco powerline-font
 
 Installation
-____________
+------------
 
 Run following command
 
