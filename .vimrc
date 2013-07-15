@@ -100,9 +100,17 @@ set magic
 set incsearch
 set ignorecase
 set nohlsearch
-set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
+set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*,*/doc/*
+set wildignore+=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp
 set noerrorbells
 set matchpairs+=<:>
+
+" Faster split resizing (+,-)
+if bufwinnr(1)
+	map + <C-W>+
+	map - <C-W>-
+endif
 
 " tab
 set autoindent
@@ -162,6 +170,8 @@ noremap <leader>ct :!ctags_php .<CR>
 noremap <leader>cs :noh<CR>
 noremap <leader>ss :%s/\s\+$//e<CR>
 noremap <leader>W :w !sudo tee %<CR>
+nnoremap <leader>] >i{<CR>
+nnoremap <leader>[ <i{<CR>
 noremap <C-Q> <C-V>
 
 " Plugin configure
@@ -173,6 +183,14 @@ let g:NERDTreeCaseSensitiveSort=1
 let g:NERDTreeWinPos='left'
 let g:NERDTreeWinSize=40
 let g:NERDTreeChDirMode=2
+
+
+" Hard to type things
+imap >> →
+imap << ←
+imap ^^ ↑
+imap VV ↓
+imap aa λ
 
 " Zencoding
 let g:user_zen_settings={
