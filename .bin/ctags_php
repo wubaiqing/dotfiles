@@ -1,7 +1,0 @@
-#! /bin/sh
-
-if [ -z $1 -o ! -d $1 ]; then
-    echo "Not found project"
-fi
-
-ctags -R $1 --exclude=js --exclude=*.js --exclude=*.min.js --exclude=.git --exclude=.svn --exclude=.DS_Store --PHP-kinds=+cf-v --regex-PHP='/abstract class ([^ ]*)/\1/c/' --regex-PHP='/interface ([^ ]*)/\1/c/' --regex-PHP='/(public\s+|static\s+|abstract\s+|protected\s+|private\s+)function\s+\&?\s*([^ (]+)/\2/f/' --totals=yes --tag-relative=yes
