@@ -16,13 +16,16 @@ Vim
 Overview of the vim setup. Sensible defaults for all the things!
 
 
+
 Mappings
 --------
 
 Reference to vim mappings.
 
 
-### General
+
+General
+--------
 
 * `,.` NERDTreeToggle
 * `,t` TlistToggle
@@ -49,6 +52,7 @@ Some handy aliases for hard to type things that I use often:
 As well `↑`, `↓`, `⏎`, and `⎋` may be used in completions menus. `<PageUp>` and `<PageDown>` work in both insert and command mode.
 
 
+
 Commands
 ========
 
@@ -57,13 +61,15 @@ Commands
 
 
 
-## Depend
+Depend
+______
 
 * vundle (vim plugin)
 * GNU Coreutils
 * monaco powerline-font
 
-## Installation
+Installation
+____________
 
 Run following command
 
