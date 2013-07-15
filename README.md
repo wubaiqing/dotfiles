@@ -49,16 +49,6 @@ Some handy aliases for hard to type things that I use often:
 As well `↑`, `↓`, `⏎`, and `⎋` may be used in completions menus. `<PageUp>` and `<PageDown>` work in both insert and command mode.
 
 
-### Splits
-
-* `+` Increase split size.
-* `-` Decrease split size.
-* `^j` Go to split below.
-* `^k` Go to split above.
-* `^h` Go to split left.
-* `^l` Go to split right.
-
-
 Commands
 ========
 
