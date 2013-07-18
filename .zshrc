@@ -21,20 +21,20 @@ fi
 
 source $HOME/.aliases
 #color{{{
-autoload colors 
-colors
+#autoload colors 
+#colors
  
-for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
-eval _$color='%{$terminfo[bold]$fg[${(L)color}]%}'
-eval $color='%{$fg[${(L)color}]%}'
-(( count = $count + 1 ))
-done
-FINISH="%{$terminfo[sgr0]%}"
+#for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
+#eval _$color='%{$terminfo[bold]$fg[${(L)color}]%}'
+#eval $color='%{$fg[${(L)color}]%}'
+#(( count = $count + 1 ))
+#done
+#FINISH="%{$terminfo[sgr0]%}"
 #}}}
  
 #命令提示符 
-RPROMPT=$(echo "$RED%D %T$FINISH")
-PROMPT=$(echo "$CYAN%n@$YELLOW%\Mac Mini:$GREEN%/$_YELLOW>$FINISH ")
+#RPROMPT=$(echo "$RED%D %T$FINISH")
+PROMPT=$(echo "$CYAN☁ :$GREEN%/$_YELLOW>$FINISH")
  
 #PROMPT=$(echo "$BLUE%M$GREEN%/
 #$CYAN%n@$BLUE%M:$GREEN%/$_YELLOW→>$FINISH ")
