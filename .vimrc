@@ -1,6 +1,6 @@
 set nocompatible
 
-" vundle configure
+" Vundle configure
 filetype off
 if (has("win32") || has("win64"))
     source $VIMRUNTIME/mswin.vim
@@ -10,28 +10,59 @@ let $VIMFILES=$HOME.'/.vim'
 set rtp+=$VIMFILES/bundle/vundle/
 call vundle#rc()
 
-" require
+" Bundle 
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'L9'
 
-" complete
+" Html
+Bundle 'ZenCoding.vim'
+let g:user_zen_settings={
+\    'php' : {
+\        'extends' : 'html'
+\    },
+\    'lang' : 'zh',
+\    'charset' : 'utf-8'
+\}
+let g:user_zen_expandabbr_key = '<c-e>'
+let g:use_zen_complete_tag = 1
+
+" Git
+Bundle 'airblade/vim-gitgutter'
+
+" Shougo Plugin
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/vimshell'
-Bundle 'ZenCoding.vim'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-surround'
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_min_syntax_length=3
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-" other
+# Commentary
+Bundle 'tomtom/tcomment_vim'
+
+" Auto indent
 Bundle 'godlygeek/tabular'
+let g:tabular_loaded = 1
+
+" Run command
 Bundle 'rosenfeld/conque-term'
+let g:ConqueTerm_PyVersion = 2
+let g:ConqueTerm_Color = 1
+
+" Tag list
 Bundle 'taglist.vim'
-Bundle 'Lokaltog/vim-easymotion'
+
+" matchit
 Bundle 'vim-scripts/matchit.zip'
+let loaded_matchit = 1
+let b:match_ignorecase = 0
+
+
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 
@@ -65,7 +96,7 @@ Bundle 'tango.vim'
 " sudo vim
 Bundle "sudo.vim"
 
-" global
+" Vim setting
 filetype on
 filetype plugin indent on
 syntax on
@@ -192,22 +223,29 @@ imap ^^ ↑
 imap VV ↓
 imap aa λ
 
-" Zencoding
-let g:user_zen_settings={
-\    'php' : {
-\        'extends' : 'html'
-\    },
-\    'lang' : 'zh',
-\    'charset' : 'utf-8'
-\}
+
+set t_Co=256
+set linespace=4
+set background=dark
+colorscheme solarized
+if has('gui_running')
+    set clipboard=
+    set guioptions-=T
+    set guioptions-=c
+    set guioptions-=m
+    set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
+endif
 
 " powerline
 let g:Powerline_symbols='fancy'
 
-" autocomplete
-let g:neocomplcache_enable_at_startup=1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_min_syntax_length=3
+
+
+
+
+
+
+
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown,php setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
