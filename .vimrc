@@ -16,59 +16,43 @@ Bundle 'L9'
 
 " Html
 Bundle 'ZenCoding.vim'
-let g:user_zen_settings={
-\    'php' : {
-\        'extends' : 'html'
-\    },
-\    'lang' : 'zh',
-\    'charset' : 'utf-8'
-\}
-let g:user_zen_expandabbr_key = '<c-e>'
-let g:use_zen_complete_tag = 1
 
 " Git
 Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-fugitive'
 
 " Shougo Plugin
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/vimshell'
-let g:neocomplcache_enable_at_startup=1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_min_syntax_length=3
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-# Commentary
+" Commentary
 Bundle 'tomtom/tcomment_vim'
 
 " Auto indent
 Bundle 'godlygeek/tabular'
-let g:tabular_loaded = 1
 
-" Run command
+" Run  comque
 Bundle 'rosenfeld/conque-term'
-let g:ConqueTerm_PyVersion = 2
-let g:ConqueTerm_Color = 1
 
 " Tag list
 Bundle 'taglist.vim'
 
-" matchit
+" Matchit
 Bundle 'vim-scripts/matchit.zip'
-let loaded_matchit = 1
-let b:match_ignorecase = 0
 
-
+" Mac App
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 
-" file
+" NERDTree
 Bundle 'The-NERD-tree'
-Bundle 'git://git.wincent.com/command-t.git'
+
+" Ctrlp
+Bundle 'kien/ctrlp.vim'
+
+" History
 Bundle 'mru.vim'
 
 " syntax
@@ -113,16 +97,13 @@ set showmatch
 set autochdir
 set autoread
 set laststatus=2
-"set relativenumber
 set ruler
 set showcmd
 set cursorline
 set sidescrolloff=20
-"set pumheight=10
 set nowrap
 
 " ime
-"set noimdisable
 set iminsert=0
 set imsearch=0
 
@@ -151,7 +132,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
-" set expandtab
 
 " misc
 set history=1000
@@ -176,14 +156,12 @@ set t_Co=256
 set linespace=4
 set background=dark
 colorscheme solarized
-
 if has('gui_running')
     set guioptions-=T
     set guioptions-=c
     set guioptions-=m
     set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
 endif
-
 if exists('+breakindent')
     set breakindent
 endif
@@ -193,7 +171,6 @@ let mapleader = ','
 noremap <leader>. :NERDTreeToggle<CR>
 noremap <leader>t :TlistToggle<CR>
 noremap <leader>h :MRU<CR>
-noremap <leader>f :CommandT<CR>
 noremap <leader>rc :e $MYVIMRC<CR>
 noremap <leader>rrc :source $MYVIMRC<CR>
 noremap <leader>sh :ConqueTermSplit bash<CR>
@@ -205,24 +182,12 @@ nnoremap <leader>] >i{<CR>
 nnoremap <leader>[ <i{<CR>
 noremap <C-Q> <C-V>
 
-" Plugin configure
-
-" NERDTree
-let NERDTreeShowHidden=0
-let g:NERDTreeChristmasTree=1
-let g:NERDTreeCaseSensitiveSort=1
-let g:NERDTreeWinPos='left'
-let g:NERDTreeWinSize=40
-let g:NERDTreeChDirMode=2
-
-
 " Hard to type things
 imap >> →
 imap << ←
 imap ^^ ↑
 imap VV ↓
 imap aa λ
-
 
 set t_Co=256
 set linespace=4
@@ -236,16 +201,7 @@ if has('gui_running')
     set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
 endif
 
-" powerline
-let g:Powerline_symbols='fancy'
-
-
-
-
-
-
-
-
+" autocmd
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown,php setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -287,7 +243,6 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_Auto_Update = 1
 
-
 " neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -306,5 +261,47 @@ let g:html_indent_style1 = "inc"
 autocmd BufNewFile *.php  0r $VIMFILES/template/template.php
 autocmd BufNewFile *.html  0r $VIMFILES/template/template.html
 
+" Plugin configure
+" NERDTree
+let NERDTreeShowHidden=0
+let g:NERDTreeChristmasTree=1
+let g:NERDTreeCaseSensitiveSort=1
+let g:NERDTreeWinPos='left'
+let g:NERDTreeWinSize=40
+let g:NERDTreeChDirMode=2
+
 " compiler
 autocmd FileType c nmap <leader><leade,>r :!cc -o "%:p:r" "%:p" && "%:p:r"<CR>
+
+" Auto Indent
+let g:tabular_loaded = 1
+
+" Matchit 
+vim-scripts/matchit
+
+" comque
+let g:ConqueTerm_PyVersion = 2
+
+" ZenCoding
+let g:ConqueTerm_Color = 1
+let g:user_zen_settings={
+\    'php' : {
+\        'extends' : 'html'
+\    },
+\    'lang' : 'zh',
+\    'charset' : 'utf-8'
+\}
+let g:user_zen_expandabbr_key = '<c-e>'
+let g:use_zen_complete_tag = 1
+
+" Shougo Plugin
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_min_syntax_length=3
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" powerline
+let g:Powerline_symbols='fancy'
