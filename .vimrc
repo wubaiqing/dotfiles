@@ -277,7 +277,7 @@ autocmd FileType c nmap <leader><leade,>r :!cc -o "%:p:r" "%:p" && "%:p:r"<CR>
 let g:tabular_loaded = 1
 
 " Matchit 
-vim-scripts/matchit
+let loaded_matchit = 1
 
 " comque
 let g:ConqueTerm_PyVersion = 2
@@ -298,10 +298,6 @@ let g:use_zen_complete_tag = 1
 let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_min_syntax_length=3
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " powerline
 let g:Powerline_symbols='fancy'
