@@ -3,7 +3,6 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 CASE_SENSITIVE="true"
 plugins=(git osx github svn brew themes)
-source $ZSH/oh-my-zsh.sh
 
 SHELL=`which zsh`
 
@@ -20,25 +19,6 @@ if [ -d $HOME/.dircolors ]; then
 fi
 
 source $HOME/.aliases
-
-autoload colors 
-colors
- 
-for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
-eval _$color='%{$terminfo[bold]$fg[${(L)color}]%}'
-eval $color='%{$fg[${(L)color}]%}'
-(( count = $count + 1 ))
-done
-FINISH="%{$terminfo[sgr0]%}"
- 
-#命令提示符 
-PROMPT='%{$fg_bold[cyan]%}☁ %{$fg_bold[green]%}%p %{$fg[green]%}%c %{$fg_bold[cyan]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}[%{$fg[cyan]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}] %{$fg[yellow]%}⚡%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}]"
- 
 
 export EDITOR=vim
 export HISTSIZE=10000
@@ -218,8 +198,6 @@ ecolor-cmd()
 		start_pos=$end_pos
 	done
 }
-check-cmd-self-insert() { zle .self-insert && recolor-cmd }
-check-cmd-backward-delete-char() { zle .backward-delete-char && recolor-cmd }
 
-zle -N self-insert check-cmd-self-insert
-zle -N backward-delete-char check-cmd-backward-delete-char
+source $HOME/.initrc
+source $ZSH/oh-my-zsh.sh
