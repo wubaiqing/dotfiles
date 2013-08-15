@@ -265,6 +265,10 @@ let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
+" load template
+autocmd BufNewFile *.php  0r $VIMFILES/template/template.php
+autocmd BufNewFile *.html  0r $VIMFILES/template/template.html
+
 " Plugin configure
 " NERDTree
 let NERDTreeShowHidden=0
@@ -288,13 +292,7 @@ let g:ConqueTerm_PyVersion = 2
 
 " ZenCoding
 let g:ConqueTerm_Color = 1
-let g:user_zen_settings={
-\    'php' : {
-\        'extends' : 'html'
-\    },
-\    'lang' : 'zh',
-\    'charset' : 'utf-8'
-\}
+let g:user_zen_settings={'php' : {'extends' : 'html'}, 'lang' : 'zh', 'charset' : 'utf-8'}
 let g:user_zen_expandabbr_key = '<c-e>'
 let g:use_zen_complete_tag = 1
 
@@ -308,4 +306,3 @@ let g:Powerline_symbols='fancy'
 
 " easyMotion
 let g:EasyMotion_leader_key = ',,'
-
