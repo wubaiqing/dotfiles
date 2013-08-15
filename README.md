@@ -8,7 +8,7 @@ Prerequisites
 * Vim (7.3+ recommended)
 
 Optional, but recommended
-* [Homebrew](http://mxcl.github.com/homebrew/) (OS X only)
+* [Homebrew](http://brew.sh/) (OS X only)
 
 Vim
 ===
