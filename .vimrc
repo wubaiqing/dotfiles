@@ -182,7 +182,7 @@ noremap <leader>h :MRU<CR>
 noremap <leader>rc :e $MYVIMRC<CR>
 noremap <leader>rrc :source $MYVIMRC<CR>
 noremap <leader>sh :ConqueTermSplit bash<CR>
-noremap <leader>ct :!ctags_php .<CR>
+noremap <leader>ct :!ctags -R --languages=PHP .<CR>
 noremap <leader>cs :noh<CR>
 noremap <leader>ss :%s/\s\+$//e<CR>
 noremap <leader>W :w !sudo tee %<CR>
