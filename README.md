@@ -27,19 +27,17 @@ Reference to vim mappings.
 General
 --------
 
+* `W` :w !sudo tee %
 * `,.` NERDTreeToggle
 * `,t` TlistToggle
 * `,h:` MRU
-* `,a,` Tabularize on comma (,)
-* `,f` CommandT
+* `,,e` Easymotion
 * `,rc` :e $MYVIMRC (:)
-* `,rc` :source $MYVIMRC (:)
 * `,sh` :ConqueTermSplit bash (:)
 * `,ct` ct :!ctags_php . (:)
 * `,cs` :noh (:)
 * `,ss` :%s/\s\+$//e (:)
-* `W` :w !sudo tee %
-* `,⏎` Insert newline.
+* `,rrc` :source $MYVIMRC (:)
 
 Some handy aliases for hard to type things that I use often:
 
