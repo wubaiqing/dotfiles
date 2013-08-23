@@ -88,6 +88,9 @@ Bundle 'Lokaltog/vim-easymotion'
 " surround
 Bundle 'tpope/vim-surround'
 
+" php-cs-fixer command 
+Bundle 'vim-php-cs-fixe'
+
 " Vim setting
 filetype on
 filetype plugin indent on
@@ -110,6 +113,7 @@ set showcmd
 set cursorline
 set sidescrolloff=20
 set nowrap
+set paste
 
 " ime
 set iminsert=0
@@ -306,3 +310,8 @@ let g:Powerline_symbols='fancy'
 
 " easyMotion
 let g:EasyMotion_leader_key = ',,'
+
+" vim-php-cs-fixer 
+nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
+nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
+
