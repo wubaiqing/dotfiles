@@ -21,6 +21,7 @@ brew install rhino
 brew install tree
 brew install webkit2png
 brew install zopfli
+brew install tree
 
 brew tap homebrew/versions
 brew install lua52
