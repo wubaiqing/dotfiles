@@ -89,7 +89,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 
 " php-cs-fixer command 
-Bundle 'vim-php-cs-fixe'
+Bundle 'stephpy/vim-php-cs-fixer'
 
 " Vim setting
 filetype on
