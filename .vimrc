@@ -1,4 +1,5 @@
 set nocompatible
+filetype off
 
 " Vundle configure
 if (has("win32") || has("win64"))
@@ -290,9 +291,6 @@ autocmd FileType c nmap <leader><leade,>r :!cc -o "%:p:r" "%:p" && "%:p:r"<CR>
 " Auto Indent
 let g:tabular_loaded = 1
 
-" Matchit 
-let loaded_matchit = 1
-
 " comque
 let g:ConqueTerm_PyVersion = 2
 
@@ -316,6 +314,3 @@ let g:EasyMotion_leader_key = ',,'
 " vim-php-cs-fixer 
 nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
-
-" matchit
-let loaded_matchit = 1
