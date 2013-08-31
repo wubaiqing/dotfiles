@@ -12,6 +12,8 @@ brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 brew tap josegonzalez/homebrew-php
 brew install php55
+brew install mysql
+brew install nginx
 
 brew install git
 brew install node
@@ -26,3 +28,5 @@ brew install tree
 brew tap homebrew/versions
 brew install lua52
 
+brew tap josegonzalez/homebrew-php
+brew install php-cs-fixer
