@@ -88,8 +88,7 @@ Bundle 'tpope/vim-surround'
 " php-cs-fixer command 
 Bundle 'stephpy/vim-php-cs-fixer'
 
-
-Bundle 'ctrlp.vim'
+" matchit
 Bundle 'matchit.zip'
 Bundle 'MatchTag'
 Bundle 'Mark'
