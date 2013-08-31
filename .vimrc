@@ -22,7 +22,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-fugitive'
 
 " Shougo Plugin
-Bundle 'Shougo/neocomplcache'
+Bundle 'neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/vimshell'
