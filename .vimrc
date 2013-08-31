@@ -1,7 +1,6 @@
 set nocompatible
 
 " Vundle configure
-filetype off
 if (has("win32") || has("win64"))
     source $VIMRUNTIME/mswin.vim
     let $HOME=$USERPROFILE
@@ -38,9 +37,6 @@ Bundle 'rosenfeld/conque-term'
 
 " Tag list
 Bundle 'taglist.vim'
-
-" Matchit
-Bundle 'vim-scripts/matchit.zip'
 
 " Mac App
 Bundle 'rizzatti/funcoo.vim'
@@ -90,6 +86,12 @@ Bundle 'tpope/vim-surround'
 
 " php-cs-fixer command 
 Bundle 'stephpy/vim-php-cs-fixer'
+
+
+Bundle 'ctrlp.vim'
+Bundle 'matchit.zip'
+Bundle 'MatchTag'
+Bundle 'Mark'
 
 " Vim setting
 filetype on
@@ -315,3 +317,5 @@ let g:EasyMotion_leader_key = ',,'
 nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 
+" matchit
+let loaded_matchit = 1
