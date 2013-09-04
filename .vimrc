@@ -196,13 +196,6 @@ nnoremap <leader>] >i{<CR>
 nnoremap <leader>[ <i{<CR>
 noremap <C-Q> <C-V>
 
-" Hard to type things
-imap >> →
-imap << ←
-imap ^^ ↑
-imap VV ↓
-imap aa λ
-
 set t_Co=256
 set linespace=4
 set background=dark
@@ -313,3 +306,6 @@ let g:EasyMotion_leader_key = ',,'
 " vim-php-cs-fixer 
 nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
+
+" taglist 
+let Tlist_Ctags_Cmd = '/usr/local/Cellar/ctags/5.8/bin/ctags'
