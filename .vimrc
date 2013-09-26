@@ -196,6 +196,13 @@ nnoremap <leader>] >i{<CR>
 nnoremap <leader>[ <i{<CR>
 noremap <C-Q> <C-V>
 
+" Hard to type things
+imap >> →
+imap << ←
+imap ^^ ↑
+imap VV ↓
+imap aa λ
+
 set t_Co=256
 set linespace=4
 set background=dark
@@ -216,20 +223,9 @@ autocmd FileType php setlocal omnifunc=phpcomplete#CompleteTags
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 
 " tab
-nmap <C-M> :tab split<CR>
-nmap <C-N> :tabnext<CR>
-nmap <C-P> :tabprevious<CR>
-
-" visual
-vnoremap < <gv
-vnoremap > >gv
-
-" insert mode shortcut
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
-inoremap <C-d> <DELETE>
+map tn :tabnext <cr>
+map tp :tabprevious <cr>
+map tm :tab split<cr>
 
 " NERDTREE
 map tree :NERDTree <cr>
@@ -305,7 +301,3 @@ let g:EasyMotion_leader_key = ',,'
 
 " vim-php-cs-fixer 
 nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
-nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
-
-" taglist 
-let Tlist_Ctags_Cmd = '/usr/local/Cellar/ctags/5.8/bin/ctags'
