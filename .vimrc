@@ -196,12 +196,9 @@ nnoremap <leader>] >i{<CR>
 nnoremap <leader>[ <i{<CR>
 noremap <C-Q> <C-V>
 
-" Hard to type things
-imap >> →
-imap << ←
-imap ^^ ↑
-imap VV ↓
-imap aa λ
+" visual
+vnoremap < <gv
+vnoremap > >gv
 
 set t_Co=256
 set linespace=4
