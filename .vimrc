@@ -93,6 +93,11 @@ Bundle 'matchit.zip'
 Bundle 'MatchTag'
 Bundle 'Mark'
 
+" syntastic
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-pathogen'
+execute pathogen#infect()
+
 " Vim setting
 filetype on
 filetype plugin indent on
@@ -146,6 +151,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
+set expandtab
+
 
 " misc
 set history=1000
