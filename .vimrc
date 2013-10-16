@@ -93,11 +93,6 @@ Bundle 'matchit.zip'
 Bundle 'MatchTag'
 Bundle 'Mark'
 
-" syntastic
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-pathogen'
-execute pathogen#infect()
-
 " Vim setting
 filetype on
 filetype plugin indent on
@@ -151,7 +146,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
-set expandtab
+"set expandtab
 
 
 " misc
@@ -245,6 +240,7 @@ map tl :Tlist
 " taglist
 set tags=$HOME/.tags
 set tags+=$PWD/tags
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
