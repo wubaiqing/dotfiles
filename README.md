@@ -23,7 +23,6 @@ Mappings
 Reference to vim mappings.
 
 
-
 General
 --------
 
@@ -40,7 +39,6 @@ General
 * `,rrc` :source $MYVIMRC (:)
 
 Some handy aliases for hard to type things that I use often:
-
 * `>>` to `→`
 * `<<` to `←`
 * `^^` to `↑`
@@ -48,6 +46,8 @@ Some handy aliases for hard to type things that I use often:
 * `aa` to `λ`
 
 As well `↑`, `↓`, `⏎`, and `⎋` may be used in completions menus. `<PageUp>` and `<PageDown>` work in both insert and command mode.
+
+
 
 
 

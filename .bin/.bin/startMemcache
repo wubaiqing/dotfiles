@@ -1,0 +1,5 @@
+memcached -p 40000 -d start
+memcached -p 40100 -d start
+memcached -p 30000 -d start
+memcached -p 30001 -d start
+memcached -p 40102 -d start

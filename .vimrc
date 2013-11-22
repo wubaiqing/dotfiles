@@ -3,8 +3,8 @@ filetype off
 
 " Vundle configure
 if (has("win32") || has("win64"))
-    source $VIMRUNTIME/mswin.vim
-    let $HOME=$USERPROFILE
+	source $VIMRUNTIME/mswin.vim
+	let $HOME=$USERPROFILE
 endif
 let $VIMFILES=$HOME.'/.vim'
 set rtp+=$VIMFILES/bundle/vundle/
@@ -64,7 +64,10 @@ Bundle 'markwu/vim-laravel4-snippets'
 Bundle 'xsbeats/vim-blade'
 
 " colorscheme
-Bundle 'jelera/vim-powerline'
+Bundle 'bling/vim-airline'
+
+
+
 Bundle 'jelera/vim-nazca-colorscheme'
 Bundle 'jelera/vim-gummybears-colorscheme'
 Bundle 'tomasr/molokai'
@@ -92,6 +95,16 @@ Bundle 'stephpy/vim-php-cs-fixer'
 Bundle 'matchit.zip'
 Bundle 'MatchTag'
 Bundle 'Mark'
+
+
+" Ack
+Bundle 'mileszs/ack.vim'
+
+" vim-multiple-cursors
+Bundle 'terryma/vim-multiple-cursors'
+
+
+Bundle 'terryma/vim-expand-region'
 
 " Vim setting
 filetype on
@@ -173,13 +186,13 @@ set linespace=4
 set background=dark
 colorscheme solarized
 if has('gui_running')
-    set guioptions-=T
-    set guioptions-=c
-    set guioptions-=m
-    set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
+	set guioptions-=T
+	set guioptions-=c
+	set guioptions-=m
+	set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
 endif
 if exists('+breakindent')
-    set breakindent
+	set breakindent
 endif
 
 " maps
@@ -207,11 +220,11 @@ set linespace=4
 set background=dark
 colorscheme solarized
 if has('gui_running')
-    set clipboard=
-    set guioptions-=T
-    set guioptions-=c
-    set guioptions-=m
-    set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
+	set clipboard=
+	set guioptions-=T
+	set guioptions-=c
+	set guioptions-=m
+	set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
 endif
 
 " autocmd
@@ -220,22 +233,6 @@ autocmd FileType html,markdown,php setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType php setlocal omnifunc=phpcomplete#CompleteTags
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-
-" tab
-map tn :tabnext <cr>
-map tp :tabprevious <cr>
-map tm :tab split<cr>
-
-" NERDTREE
-map tree :NERDTree <cr>
-map nc :NERDTreeClose <cr>
-map bk :Bookmark
-map tf :set filetype=
-map to :BookmarkToRoot
-map tof ::OpenBookmark
-map cbk :ClearBookmarks
-map cbkall :ClearAllBookmarks
-map tl :Tlist
 
 " taglist
 set tags=$HOME/.tags
@@ -252,7 +249,7 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 if has('conceal')
-  set conceallevel=2 concealcursor=i
+	set conceallevel=2 concealcursor=i
 endif
 
 " vim-javascript
@@ -293,11 +290,28 @@ let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_min_syntax_length=3
 
-" powerline
-let g:Powerline_symbols='fancy'
-
 " easyMotion
 let g:EasyMotion_leader_key = ',,'
 
 " vim-php-cs-fixer 
+let g:php_cs_fixer_level = "psr2"                  " which level ?
+let g:php_cs_fixer_config = "default"             " configuration
+let g:php_cs_fixer_php_path = "php"               " Path to PHP
+let g:php_cs_fixer_fixers_list = ""               " List of fixers
+let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
+let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
 nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
+nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
+
+" airline
+let g:airline_theme = 'solarized'
+call airline#init#bootstrap()
+call airline#init#sections()
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'

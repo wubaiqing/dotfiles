@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+brew update
+brew upgrade
+brew install coreutils
+echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+brew install findutils
+brew install bash
+brew install wget --enable-iri
+
+# Install more recent versions of some OS X tools
+brew tap homebrew/dupes
+brew install homebrew/dupes/grep
+brew tap josegonzalez/homebrew-php
+brew install php55
+brew install mysql
+brew install nginx
+
+brew install git
+brew install node
+brew install pigz
+brew install rename
+brew install rhino
+brew install tree
+brew install webkit2png
+brew install zopfli
+brew install tree
+
+brew tap homebrew/versions
+brew install lua52
+
+brew tap josegonzalez/homebrew-php
+brew install php-cs-fixer
