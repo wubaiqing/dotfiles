@@ -15,11 +15,15 @@ Bundle 'gmarik/vundle'
 Bundle 'L9'
 
 " Html
-Bundle 'ZenCoding.vim'
+Bundle 'mattn/emmet-vim'
 
 " Git
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-fugitive'
+
+
+"auto pairs
+Bundle 'jiangmiao/auto-pairs'
 
 " Shougo Plugin
 Bundle 'neocomplcache'
