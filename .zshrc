@@ -2,7 +2,8 @@ DEFAULT_USER='wubaiqing'
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 CASE_SENSITIVE="true"
-plugins=(git osx github svn brew themes)
+
+plugins=(osx git git-flow github gitignore brew ruby gem rails4 bundler cake npm composer laravel phpunit vagrant)
 
 SHELL=`which zsh`
 

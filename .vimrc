@@ -130,6 +130,8 @@ set sidescrolloff=20
 set nowrap
 set paste
 
+set noerrorbells
+
 " ime
 set iminsert=0
 set imsearch=0
@@ -159,7 +161,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
-"set expandtab
+set expandtab
 
 
 " misc
@@ -210,6 +212,8 @@ noremap <leader>W :w !sudo tee %<CR>
 nnoremap <leader>] >i{<CR>
 nnoremap <leader>[ <i{<CR>
 noremap <C-Q> <C-V>
+
+map tf :set filetype=
 
 " visual
 vnoremap < <gv
