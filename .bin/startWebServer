@@ -1,0 +1,8 @@
+sudo nginx
+/usr/local/Cellar/php55/5.5.9/sbin/php-fpm --fpm-config /usr/local/etc/php/5.5/php-fpm.conf &
+memcached -d -p 11211 -c 1024
+memcached -d -p 30001 -c 1024
+memcached -d -p 30002 -c 1024
+memcached -d -p 40100 -c 1024
+memcached -d -p 40101 -c 1024
+memcached -d -p 40102 -c 1024

@@ -1,0 +1,7 @@
+memcached -d -p 11211 -c 1024
+memcached -d -p 30001 -c 1024
+memcached -d -p 30002 -c 1024
+memcached -d -p 40000 -c 1024
+memcached -d -p 40100 -c 1024
+memcached -d -p 40101 -c 1024
+memcached -d -p 40102 -c 1024
