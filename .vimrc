@@ -49,7 +49,7 @@ Bundle 'Shougo/vimshell'
 Bundle 'tomtom/tcomment_vim'
 
 " Auto indent
-Bundle 'godlygeek/tabular'
+Bundle 'junegunn/vim-easy-align'
 
 " Tag list
 Bundle 'taglist.vim'
@@ -194,7 +194,7 @@ set linespace=4
 set background=light
 colorscheme solarized
 if has('gui_running')
-    set guifont=Monaco\ for\ Powerline:h12,Monaco:h12
+    set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
     set clipboard=
     set guioptions-=T
     set guioptions-=c
@@ -260,9 +260,6 @@ let g:NERDTreeWinPos='left'
 let g:NERDTreeWinSize=40
 let g:NERDTreeChDirMode=2
 
-" compiler
-autocmd FileType c nmap <leader><leade,>r :!cc -o "%:p:r" "%:p" && "%:p:r"<CR>
-
 " Auto Indent
 let g:tabular_loaded = 1
 
@@ -311,3 +308,7 @@ let g:snips_author=''
 let g:html_indent_inctags="html,body,head,tbody"
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
+
+" vim-easy-align
+vmap <Enter> <Plug>(EasyAlign)
+nmap <Leader>a <Plug>(EasyAlign)
