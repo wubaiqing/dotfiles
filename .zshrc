@@ -37,4 +37,3 @@ bindkey "\t" userComplete
 source $HOME/.aliases
 source /usr/local/Cellar/z/1.8/etc/profile.d/z.sh
 source $ZSH/oh-my-zsh.sh
-

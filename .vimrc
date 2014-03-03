@@ -1,4 +1,21 @@
-let $VIMFILES='~/.vim'
+"               ,
+"              / \,,_  .'|
+"           ,{{| /}}}}/_.'
+"          }}}}` '{{'  '.
+"        {{{{{    _   ;, \
+"     ,}}}}}}    /o`\  ` ;)
+"    {{{{{{   /           (
+"    }}}}}}   |            \
+"   {{{{{{{{   \            \          ,-------------------------------.
+"   }}}}}}}}}   '.__      _  |        /       HI                        \
+"   {{{{{{{{       /`._  (_\ /       /      /   \                        |
+"    }}}}}}'      |    //___/   --= <   VVVI     HI-HI-HI                |
+"    `{{{{`       |     '--'         \                   \               |
+"     }}}`                            \                  HIM-HIM-HIM!!!  /
+"                                      '--------------------------------'
+set nocompatible
+filetype off
+let $VIMFILES=$HOME.'/.vim'
 set rtp+=$VIMFILES/bundle/vundle/
 call vundle#rc()
 
@@ -177,13 +194,11 @@ set linespace=4
 set background=light
 colorscheme solarized
 if has('gui_running')
-	set guioptions-=T
-	set guioptions-=c
-	set guioptions-=m
-	set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
-endif
-if exists('+breakindent')
-	set breakindent
+    set guifont=Monaco\ for\ Powerline:h12,Monaco:h12
+    set clipboard=
+    set guioptions-=T
+    set guioptions-=c
+    set guioptions-=m
 endif
 
 " maps
@@ -202,9 +217,6 @@ noremap <leader>cs :noh<CR>
 " visual
 vnoremap < <gv
 vnoremap > >gv
-
-" Airline
-let g:airline_powerline_fonts=1
 
 " autocmd
 let g:neocomplcache_enable_at_startup=1
