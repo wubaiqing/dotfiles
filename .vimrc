@@ -16,99 +16,103 @@
 set nocompatible
 filetype off
 let $VIMFILES=$HOME.'/.vim'
-set rtp+=$VIMFILES/bundle/vundle/
-call vundle#rc()
+if has('vim_starting')
+    set nocompatible               " Be iMproved
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-" Bundle
-Bundle 'gmarik/vundle'
-Bundle 'L9'
+" Required:
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-Bundle 'shawncplus/phpcomplete.vim'
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'shawncplus/phpcomplete.vim'
+NeoBundle 'flomotlik/vim-livereload'
+NeoBundle 'flazz/vim-colorschemes'
 
 " Html
-Bundle 'mattn/emmet-vim'
+NeoBundle 'mattn/emmet-vim'
 
 " Git
-Bundle 'airblade/vim-gitgutter'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-fugitive'
 
 "auto pairs
-Bundle 'jiangmiao/auto-pairs'
+NeoBundle 'jiangmiao/auto-pairs'
 
 " Shougo Plugin
-Bundle 'neocomplcache'
-Bundle 'Shougo/neosnippet'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle 'honza/vim-snippets'
-Bundle "garbas/vim-snipmate"
-Bundle "kien/rainbow_parentheses.vim"
-
-Bundle 'Shougo/vimshell'
+NeoBundle 'neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle "MarcWeber/vim-addon-mw-utils"
+NeoBundle "tomtom/tlib_vim"
+NeoBundle 'honza/vim-snippets'
+NeoBundle "garbas/vim-snipmate"
+NeoBundle "kien/rainbow_parentheses.vim"
+NeoBundle 'Shougo/vimshell'
 
 " Commentary
-Bundle 'tomtom/tcomment_vim'
+NeoBundle 'tomtom/tcomment_vim'
 
 " Auto indent
-Bundle 'junegunn/vim-easy-align'
+NeoBundle 'junegunn/vim-easy-align'
 
 " Tag list
-Bundle 'taglist.vim'
+NeoBundle 'taglist.vim'
 
 " Mac App
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
+NeoBundle 'rizzatti/funcoo.vim'
+NeoBundle 'rizzatti/dash.vim'
 
 " NERDTree
-Bundle 'The-NERD-tree'
+NeoBundle 'The-NERD-tree'
 
 " Ctrlp
-Bundle 'kien/ctrlp.vim'
+NeoBundle 'kien/ctrlp.vim'
 
 " History
-Bundle 'mru.vim'
+NeoBundle 'mru.vim'
 
 " airline
-Bundle 'bling/vim-airline'
+NeoBundle 'bling/vim-airline'
 
 " colorscheme
-Bundle 'Railscasts-Theme-GUIand256color'
-Bundle 'altercation/vim-colors-solarized'
+NeoBundle 'Railscasts-Theme-GUIand256color'
+NeoBundle 'altercation/vim-colors-solarized'
 
 " easymotion
-Bundle 'Lokaltog/vim-easymotion'
+NeoBundle 'Lokaltog/vim-easymotion'
 
 " surround
-Bundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-surround'
 
 " php-cs-fixer command
-Bundle 'stephpy/vim-php-cs-fixer'
+NeoBundle 'stephpy/vim-php-cs-fixer'
 
 " matchit
-Bundle 'matchit.zip'
-Bundle 'MatchTag'
-
-" mark
-Bundle 'Mark'
+NeoBundle 'matchit.zip'
+NeoBundle 'MatchTag'
 
 " ack
-Bundle 'mileszs/ack.vim'
+NeoBundle 'mileszs/ack.vim'
 
 " vim-multiple-cursors
-Bundle 'terryma/vim-multiple-cursors'
+NeoBundle 'terryma/vim-multiple-cursors'
 
 
-Bundle 'terryma/vim-expand-region'
+NeoBundle 'terryma/vim-expand-region'
 
 " syntax
-Bundle 'groenewege/vim-less'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'vim-scripts/phpvim'
-Bundle 'othree/html5.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'markwu/vim-laravel4-snippets'
-Bundle 'xsbeats/vim-blade'
+NeoBundle 'groenewege/vim-less'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'vim-scripts/phpvim'
+NeoBundle 'othree/html5.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'markwu/vim-laravel4-snippets'
+NeoBundle 'xsbeats/vim-blade'
 
 
 " Vim setting
@@ -122,8 +126,9 @@ set title
 set hidden
 set nostartofline
 set scrolljump=10
-set foldenable
 set backspace=indent,eol,start
+set nofoldenable
+set foldmethod=indent
 set mouse=a
 set showmatch
 set autochdir
@@ -149,15 +154,15 @@ set incsearch
 set ignorecase
 set nohlsearch
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
-set wildignore+=*/smarty/*,*/vendor/*,*/node_modules/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*,*/doc/*
+set wildignore+=*/smarty/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/ckeditor/*,*/doc/*
 set wildignore+=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp
 set noerrorbells
 set matchpairs+=<:>
 
 " Faster split resizing (+,-)
 if bufwinnr(1)
-	map + <C-W>+
-	map - <C-W>-
+    map + <C-W>+
+    map - <C-W>-
 endif
 
 " tab
@@ -211,7 +216,7 @@ noremap <leader>t :TlistToggle<CR>
 noremap <leader>h :MRU<CR>
 noremap <leader>rc :e $MYVIMRC<CR>
 noremap <leader>rrc :source $MYVIMRC<CR>
-noremap <leader>ct :!ctags -R --languages=PHP .<CR>
+noremap <leader>ct :!/usr/local/Cellar/ctags/5.8/bin/ctags -R --languages=PHP *<CR>
 noremap <leader>cs :noh<CR>
 
 " visual
@@ -258,7 +263,9 @@ let g:NERDTreeChristmasTree=1
 let g:NERDTreeCaseSensitiveSort=1
 let g:NERDTreeWinPos='left'
 let g:NERDTreeWinSize=40
-let g:NERDTreeChDirMode=2
+let g:NERDTreeChDirMode=1
+let g:NERDTreeIgnore=['\~$']
+
 
 " Auto Indent
 let g:tabular_loaded = 1
@@ -288,15 +295,15 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
+            \ "\<Plug>(neosnippet_expand_or_jump)"
+            \: pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
+            \ "\<Plug>(neosnippet_expand_or_jump)"
+            \: "\<TAB>"
 
 " For snippet_complete marker.
 if has('conceal')
-  set conceallevel=2 concealcursor=i
+    set conceallevel=2 concealcursor=i
 endif
 
 " Enable snipMate compatibility feature.
@@ -312,3 +319,4 @@ let g:html_indent_style1="inc"
 " vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
+
