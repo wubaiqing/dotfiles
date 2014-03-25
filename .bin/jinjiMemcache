@@ -1,0 +1,7 @@
+echo "flush_all" | nc 10.8.210.208 11211
+echo "flush_all" | nc 10.8.210.208 30001
+echo "flush_all" | nc 10.8.210.208 30002 
+echo "flush_all" | nc 10.8.210.208 40000
+echo "flush_all" | nc 10.8.210.208 40100
+echo "flush_all" | nc 10.8.210.208 40101
+echo "flush_all" | nc 10.8.210.208 40102
