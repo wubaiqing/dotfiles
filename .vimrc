@@ -29,7 +29,6 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'shawncplus/phpcomplete.vim'
-NeoBundle 'flomotlik/vim-livereload'
 NeoBundle 'flazz/vim-colorschemes'
 
 " Html
@@ -319,4 +318,5 @@ let g:html_indent_style1="inc"
 " vim-easy-align
 vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
+
 
