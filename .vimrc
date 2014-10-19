@@ -1,18 +1,3 @@
-"               ,
-"              / \,,_  .'|
-"           ,{{| /}}}}/_.'
-"          }}}}` '{{'  '.
-"        {{{{{    _   ;, \
-"     ,}}}}}}    /o`\  ` ;)
-"    {{{{{{   /           (
-"    }}}}}}   |            \
-"   {{{{{{{{   \            \          ,-------------------------------.
-"   }}}}}}}}}   '.__      _  |        /       HI                        \
-"   {{{{{{{{       /`._  (_\ /       /      /   \                        |
-"    }}}}}}'      |    //___/   --= <   VVVI     HI-HI-HI                |
-"    `{{{{`       |     '--'         \                   \               |
-"     }}}`                            \                  HIM-HIM-HIM!!!  /
-"                                      '--------------------------------'
 set nocompatible
 filetype off
 let $VIMFILES=$HOME.'/.vim'
@@ -37,6 +22,9 @@ NeoBundle 'mattn/emmet-vim'
 " Git
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
+
+" Ruby
+NeoBundle 'tpope/vim-rails'
 
 "auto pairs
 NeoBundle 'jiangmiao/auto-pairs'
@@ -195,7 +183,7 @@ set fileformats=unix,mac
 " font and theme
 set t_Co=256
 set linespace=4
-set background=light
+" set background=light
 colorscheme solarized
 if has('gui_running')
     set guifont=Monaco\ for\ Powerline:h14,Monaco:h14

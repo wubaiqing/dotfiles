@@ -1,8 +1,10 @@
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="af-magic"
+ZSH_THEME="robbyrussell"
 plugins=(git osx brew cp git-flow github laravel python rsync themes vundle virtualenv)
 
-export PATH="$HOME/.bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
 if test -d $HOME/.dircolors ; then
 	eval `dircolors -b $HOME/.dircolors/dircolors.256dark`
 	alias ls='ls --color -hF'
@@ -35,5 +37,6 @@ zle -N userComplete
 bindkey "\t" userComplete
 
 source $HOME/.aliases
-source /usr/local/Cellar/z/1.8/etc/profile.d/z.sh
 source $ZSH/oh-my-zsh.sh
+
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh

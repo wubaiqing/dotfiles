@@ -1,3 +1,0 @@
-sudo nginx
-startMemcache 
-/usr/local/Cellar/php55/5.5.9/sbin/php-fpm --fpm-config /usr/local/etc/php/5.5/php-fpm.conf &

@@ -10,4 +10,3 @@ function doIt()
     fi
 }
 doIt
-

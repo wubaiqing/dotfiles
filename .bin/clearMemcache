@@ -1,7 +1,0 @@
-echo "flush_all" | nc 127.0.0.1 11211
-echo "flush_all" | nc 127.0.0.1 30001
-echo "flush_all" | nc 127.0.0.1 30002 
-echo "flush_all" | nc 127.0.0.1 40000
-echo "flush_all" | nc 127.0.0.1 40100
-echo "flush_all" | nc 127.0.0.1 40101
-echo "flush_all" | nc 127.0.0.1 40102
