@@ -4,6 +4,7 @@ plugins=(git osx brew cp git-flow github laravel python rsync themes vundle virt
 
 export PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export DOCKER_HOST=tcp://127.0.0.1:4243
 
 if test -d $HOME/.dircolors ; then
 	eval `dircolors -b $HOME/.dircolors/dircolors.256dark`
