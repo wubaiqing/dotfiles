@@ -1,10 +1,12 @@
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="robbyrussell"
+ZSH_THEME="cloud"
 plugins=(git osx brew cp git-flow github laravel python rsync themes vundle virtualenv)
 
-export PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Users/wubaiqing/.rvm/bin:/usr/local/bin:/usr/local/sbin:$HOME/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export DOCKER_HOST=tcp://127.0.0.1:4243
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/wubaiqing/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
 
 if test -d $HOME/.dircolors ; then
 	eval `dircolors -b $HOME/.dircolors/dircolors.256dark`
@@ -41,3 +43,5 @@ source $HOME/.aliases
 source $ZSH/oh-my-zsh.sh
 
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

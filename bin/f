@@ -1,0 +1,69 @@
+#!/usr/bin/env php
+<?php
+/**
+ * 有道翻译
+ * Create Time : 2014-8-22 09:59
+ * @author wubaiqing <wubaiqing@vip.qq.com>
+ */
+
+// 请求URL地址
+$url = 'http://fanyi.youdao.com/openapi.do?keyfrom=wubaiqing&key=1365145661&type=data&doctype=json&version=1.1';
+
+// 删除脚本名称
+array_shift($argv);
+
+// 判断单词数量
+$count = count($argv);
+if ($count == 1) {
+    // good
+    $query = array_shift($argv);
+} else {
+    // very good
+    $query = implode(' ', $argv);
+}
+
+// 请求URL
+$json = file_get_contents($url . '&q=' . $query);
+
+// 解析json字符串
+$data = json_decode($json, true);
+
+// 输出
+echo formatData($data);
+
+// 朗读
+exec('say ' . $data['query']);
+
+/**
+ * 格式化数据
+ * @param array $json 请求的JSON字符串
+ * @return string
+ */
+function formatData($data)
+{
+    $string = '';
+
+    // 翻译
+    $string .= '翻译 : ' . implode(', ', $data['translation']) . "\n";
+    if (isset($data['basic'])) {
+        // 音标
+        if (isset($data['basic']['us-phonetic'])) {
+            $string .= '音标 : ' . $data['basic']['us-phonetic'] . "\n";
+        }
+
+        // 解释
+        if (isset($data['basic']['explains'])) {
+            $string .= '解释 : ' . implode(', ', $data['basic']['explains']) . "\n";
+        }
+    }
+
+    // 更多解释
+    if (isset($data['web'])) {
+        $string .= "更多 : \n";
+        foreach ($data['web'] as $items) {
+            $string .= $items['key']. ' : ' . implode(', ', $items['value']) . "\n";
+        }
+    }
+
+    return $string;
+}
