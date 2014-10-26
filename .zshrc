@@ -1,6 +1,6 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="cloud"
-plugins=(git osx brew cp git-flow github laravel python rsync themes vundle virtualenv)
+plugins=(git osx brew cp git-flow github laravel python rsync themes vundle virtualenv vagrant brew-cask)
 
 export PATH="/Users/wubaiqing/.rvm/bin:/usr/local/bin:/usr/local/sbin:$HOME/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
