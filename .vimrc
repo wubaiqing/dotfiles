@@ -11,10 +11,10 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
-"NeoBundleFetch 'Shougo/neobundle.vim'
-"NeoBundle 'thinca/vim-quickrun'
-"NeoBundle 'shawncplus/phpcomplete.vim'
-"NeoBundle 'flazz/vim-colorschemes'
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'shawncplus/phpcomplete.vim'
+NeoBundle 'flazz/vim-colorschemes'
 
 " Html
 NeoBundle 'mattn/emmet-vim'
@@ -156,6 +156,10 @@ if bufwinnr(1)
     map - <C-W>-
 endif
 
+" modifi
+set modifiable
+set write
+
 " tab
 set autoindent
 set cindent
@@ -190,8 +194,7 @@ set linespace=4
 set background=dark
 colorscheme molokai 
 if has('gui_running')
-    " set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
-    set guifont=Menlo\ for\ Powerline:h14,Menlo:h14
+    set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
     set clipboard=
     set guioptions-=T
     set guioptions-=c
@@ -210,6 +213,8 @@ noremap <leader>rc :e $MYVIMRC<CR>
 noremap <leader>rrc :source $MYVIMRC<CR>
 noremap <leader>ct :!/usr/local/Cellar/ctags/5.8/bin/ctags -R --languages=PHP *<CR>
 noremap <leader>cs :noh<CR>
+noremap <leader>cs :noh<CR>
+noremap <Leader> :GundoToggle<CR>
 
 " visual
 vnoremap < <gv
@@ -322,4 +327,3 @@ try
     set undofile
 catch
 endtry
-
