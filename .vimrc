@@ -11,10 +11,10 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'shawncplus/phpcomplete.vim'
-NeoBundle 'flazz/vim-colorschemes'
+"NeoBundleFetch 'Shougo/neobundle.vim'
+"NeoBundle 'thinca/vim-quickrun'
+"NeoBundle 'shawncplus/phpcomplete.vim'
+"NeoBundle 'flazz/vim-colorschemes'
 
 " Html
 NeoBundle 'mattn/emmet-vim'
@@ -66,7 +66,11 @@ NeoBundle 'bling/vim-airline'
 
 " colorscheme
 NeoBundle 'Railscasts-Theme-GUIand256color'
-NeoBundle 'altercation/vim-colors-solarized'
+
+" NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'tomasr/molokai'
+
+NeoBundle 'sjl/gundo.vim'
 
 " easymotion
 NeoBundle 'Lokaltog/vim-easymotion'
@@ -183,10 +187,11 @@ set fileformats=unix,mac
 " font and theme
 set t_Co=256
 set linespace=4
-" set background=light
-colorscheme solarized
+set background=dark
+colorscheme molokai 
 if has('gui_running')
-    set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
+    " set guifont=Monaco\ for\ Powerline:h14,Monaco:h14
+    set guifont=Menlo\ for\ Powerline:h14,Menlo:h14
     set clipboard=
     set guioptions-=T
     set guioptions-=c
@@ -307,4 +312,14 @@ let g:html_indent_style1="inc"
 vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
 
+" molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+
+" gundo
+try
+    set undodir=~/.vim/Temp-dirs/undodir
+    set undofile
+catch
+endtry
 
