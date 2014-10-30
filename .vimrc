@@ -94,6 +94,9 @@ NeoBundle 'terryma/vim-multiple-cursors'
 
 NeoBundle 'terryma/vim-expand-region'
 
+NeoBundle 'yonchu/accelerated-smooth-scroll'
+
+
 " syntax
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'plasticboy/vim-markdown'
@@ -203,6 +206,7 @@ endif
 
 " maps
 map tf :set filetype=
+map tk :Ack -f 
 
 " mapleader
 let mapleader = ','
