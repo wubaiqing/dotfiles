@@ -1,5 +1,6 @@
 export ZSH=/Users/wubaiqing/.oh-my-zsh
 ZSH_THEME="cloud"
+#ZSH_THEME="gitster"
 
 # Plugins
 plugins=(
@@ -9,6 +10,7 @@ plugins=(
   ctag 
   brew 
   rsync 
+  vagrant 
   copydir 
   history 
   copyfile 
@@ -22,11 +24,13 @@ plugins=(
   rake 
   rails 
   bundler 
+  capistrano
 
+  bower 
 
-  vagrant 
-
+  yii2 
   composer 
+
 )
 
 
