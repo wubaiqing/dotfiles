@@ -1,50 +1,46 @@
-ZSH=$HOME/.oh-my-zsh
+export ZSH=/Users/wubaiqing/.oh-my-zsh
 ZSH_THEME="cloud"
-plugins=(git osx brew cp git-flow github laravel rsync vagrant brew-cask composer rails ruby ctag)
 
-export PATH="/Users/wubaiqing/.rvm/bin:/usr/local/bin:/usr/local/sbin:$HOME/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/wubaiqing/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+# Plugins
+plugins=(
+  z 
+  cp 
+  osx 
+  ctag 
+  brew 
+  rsync 
+  copydir 
+  history 
+  copyfile 
+  colorize 
+  web-search
+
+  git 
+  git-flow 
+
+  ruby 
+  rake 
+  rails 
+  bundler 
 
 
-source `brew --prefix`/etc/profile.d/z.sh
+  vagrant 
 
-if test -d $HOME/.dircolors ; then
-	eval `dircolors -b $HOME/.dircolors/dircolors.256dark`
-	alias ls='ls --color -hF'
+  composer 
+)
+
+
+# User configuration
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
+export LANG=en_US.UTF-8
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
 fi
 
-userComplete()
-{
-	case $BUFFER in
-	"" )                          # 空行填入 "cd "
-		BUFFER="cd "
-		zle end-of-line
-		zle expand-or-complete
-	;;
-	"cd --" )                  # "cd --" 替换为 "cd +"
-		BUFFER="cd +"
-		zle end-of-line
-		zle expand-or-complete
-	;;
-	"cd +-" )                  # "cd +-" 替换为 "cd -"
-		BUFFER="cd -"
-		zle end-of-line
-		zle expand-or-complete
-	;;
-	* )
-		zle expand-or-complete
-	;;
-	esac
-}
-zle -N userComplete
-bindkey "\t" userComplete
-
-source $HOME/.aliases
-source $ZSH/oh-my-zsh.sh
-
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
