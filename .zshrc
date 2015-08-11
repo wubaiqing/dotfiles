@@ -18,9 +18,12 @@ plugins=(
   copyfile 
   colorize 
   web-search
+  common-aliases 
 
   git 
   git-flow 
+
+  vundle 
 
   ruby 
   rake 
@@ -38,11 +41,11 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 
-if [[ -n $SSH_CONNECTION ]]; then
+#if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
+#else
+#  export EDITOR='mvim'
+#fi
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
