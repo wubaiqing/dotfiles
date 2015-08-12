@@ -50,6 +50,10 @@ call vundle#begin()
 
   " AG搜索
   Plugin 'rking/ag.vim'
+  
+  " IF代码补全 - 有配置项
+  Plugin 'Shougo/neosnippet-snippets'
+  Plugin 'honza/vim-snippets'
 
 
 
@@ -79,15 +83,16 @@ set expandtab
 " 配色
 colorscheme molokai 
 
-" 按键映射 - ,
+
+" Begin - 快捷键绑定
 let mapleader = ','
 
-" NERDTree - ,.
 noremap <leader>. :NERDTreeToggle<CR>
 noremap <leader>t :TlistToggle<CR>
 noremap <leader>h :Unite file_mru<CR>
 noremap <leader>rc :e $MYVIMRC<CR>
 noremap <leader>rrc :source $MYVIMRC<CR>
+" End - 快捷键绑定
 
 
 
@@ -97,6 +102,9 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+
 let g:neocomplcache_dictionary_filetype_lists = {
   \ 'default' : '',
   \ 'vimshell' : $HOME.'/.vimshell_hist',
@@ -108,21 +116,21 @@ if !exists('g:neocomplcache_keyword_patterns')
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplcache#smart_close_popup() . "\<CR>"
   return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 endfunction
 
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-g> neocomplcache#undo_completion()
+inoremap <expr><C-l> neocomplcache#complete_common_string()
+
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><BS>  neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <expr><C-y> neocomplcache#close_popup()
+inoremap <expr><C-e> neocomplcache#cancel_popup()
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -135,6 +143,10 @@ if !exists('g:neocomplcache_force_omni_patterns')
   let g:neocomplcache_force_omni_patterns = {}
 endif
 let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+" End - 自动补全
+
+" Begin - 自动补全
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
 " End - 自动补全

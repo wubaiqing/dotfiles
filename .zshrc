@@ -40,13 +40,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-
-#if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-#else
-#  export EDITOR='mvim'
-#fi
-
+export EDITOR='vim'
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 export LANG=en_US.UTF-8
