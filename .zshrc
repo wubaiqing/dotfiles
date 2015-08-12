@@ -47,7 +47,6 @@ source $ZSH/oh-my-zsh.sh
 #  export EDITOR='mvim'
 #fi
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
 export LANG=en_US.UTF-8
