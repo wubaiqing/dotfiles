@@ -55,65 +55,108 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'airblade/vim-gitgutter'
 
   " 自动补全 --- 配置文件
+  " https://github.com/Shougo/neocomplete
   NeoBundle 'Shougo/neocomplete.vim'
 
   " 括号补全
+  " https://github.com/jiangmiao/auto-pairs
   NeoBundle 'jiangmiao/auto-pairs'
 
   " 当前文件搜索 --- 配置文件
+  " https://github.com/Lokaltog/vim-easymotion
   NeoBundle 'Lokaltog/vim-easymotion'
 
   " Ruby语法高亮
+  " https://github.com/vim-ruby/vim-ruby
   NeoBundle 'vim-ruby/vim-ruby'
 
   " Rails文件跳转
+  " https://github.com/tpope/vim-rails
   NeoBundle 'tpope/vim-rails'
 
   " HTML补全
+  " https://github.com/mattn/emmet-vim
   NeoBundle 'mattn/emmet-vim'
 
   " 代码补全 - 有配置项
+  " https://github.com/Shougo/neosnippet-snippets
   NeoBundle 'Shougo/neosnippet-snippets'
+
+  " 代码补全 - 有配置项
+  " https://github.com/honza/vim-snippets
   NeoBundle 'honza/vim-snippets'
 
   " 文件注释
+  " https://github.com/tomtom/tcomment_vim
   NeoBundle 'tomtom/tcomment_vim'
 
   " 状态栏
+  " https://github.com/bling/vim-airline
   NeoBundle 'bling/vim-airline'
 
   " Tag
+  " https://github.com/majutsushi/tagbar
   NeoBundle 'majutsushi/tagbar'
 
   " 代码补全
+  " https://github.com/SirVer/ultisnips
   NeoBundle 'SirVer/ultisnips'
 
-
   " 替换字符
+  " https://github.com/tpope/vim-surround
   NeoBundle 'tpope/vim-surround'
 
   " HTML Tag
+  " https://github.com/gregsexton/MatchTag
   NeoBundle 'gregsexton/MatchTag'
 
   " HTML跳转
+  " https://github.com/vim-scripts/matchit.zip
   NeoBundle 'vim-scripts/matchit.zip'
 
   " Sublime 
+  " https://github.com/terryma/vim-multiple-cursors
   NeoBundle 'terryma/vim-multiple-cursors'
+
+  " Sublime 
+  " https://github.com/terryma/vim-expand-region
   NeoBundle 'terryma/vim-expand-region'
 
   " syntax
+  " https://github.com/groenewege/vim-less
   NeoBundle 'groenewege/vim-less'
-  NeoBundle 'plasticboy/vim-markdown'
-  NeoBundle 'vim-scripts/phpvim'
-  NeoBundle 'othree/html5.vim'
-  NeoBundle 'pangloss/vim-javascript'
-  NeoBundle 'othree/javascript-libraries-syntax.vim'
-  NeoBundle 'kchmck/vim-coffee-script'
-  NeoBundle 'markwu/vim-laravel4-snippets'
-  NeoBundle 'xsbeats/vim-blade'
-  
 
+  " syntax
+  " https://github.com/plasticboy/vim-markdown
+  NeoBundle 'plasticboy/vim-markdown'
+
+  " syntax
+  " https://github.com/vim-scripts/phpvim
+  NeoBundle 'vim-scripts/phpvim'
+
+  " syntax
+  " https://github.com/othree/htlm5.vim
+  NeoBundle 'othree/html5.vim'
+
+  " syntax
+  " https://github.com/pangloss/vim-javascript
+  NeoBundle 'pangloss/vim-javascript'
+
+  " syntax
+  " https://github.com/pangloss/vim-javascript
+  NeoBundle 'othree/javascript-libraries-syntax.vim'
+
+  " syntax
+  " https://github.com/kchmck/vim-coffee-script
+  NeoBundle 'kchmck/vim-coffee-script'
+
+  " syntax
+  " https://github.com/markwu/vim-laravel4-snippets
+  NeoBundle 'markwu/vim-laravel4-snippets'
+
+  " syntax
+  " https://github.com/xsbeats/vim-blade
+  NeoBundle 'xsbeats/vim-blade'
 
 call neobundle#end()
 " End - 下载插件
