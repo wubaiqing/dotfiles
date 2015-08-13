@@ -1,102 +1,121 @@
-" 不兼容VI
+" 不兼容VI模式
 set nocompatible
 
 " 关闭文件类型检测
 filetype off
 
-" 使用Vundle工具
-set rtp+=~/.vim/bundle/Vundle.vim
+" NeoBundle路径
+set runtimepath+=~/.vim/bundle/neobundle.vim/
 
 " Begin - 下载插件
-call vundle#begin()
+call neobundle#begin(expand('~/.vim/bundle/'))
 
-  " Vundle插件管理
-  Plugin 'VundleVim/Vundle.vim'
+  " NeoBundle 插件管理
+  " https://github.com/Shougo/neobundle.vim
+  NeoBundleFetch 'Shougo/neobundle.vim'
 
-  " 左侧导航栏 - 快捷键
-  Plugin 'scrooloose/nerdtree'
+  " Unite文件搜索接口
+  " https://github.com/Shougo/unite.vim
+  NeoBundle 'Shougo/unite.vim'
 
-  " 配色
-  Plugin 'tomasr/molokai'
+  " Unit异步安装更新工具
+  " https://github.com/Shougo/vimproc.vim
+  NeoBundle 'Shougo/vimproc.vim', {
+  \ 'build' : {
+  \     'windows' : 'tools\\update-dll-mingw',
+  \     'cygwin' : 'make -f make_cygwin.mak',
+  \     'mac' : 'make -f make_mac.mak',
+  \     'linux' : 'make',
+  \     'unix' : 'gmake',
+  \    },
+  \ }
 
-  " 文件索引
-  Plugin 'ctrlpvim/ctrlp.vim'
+  " Unite文件缓冲区
+  " https://github.com/Shougo/neomru
+  NeoBundle 'Shougo/neomru.vim'
+  
+  " Unite文件函数列表
+  " https://github.com/Shougo/unite-outline
+  NeoBundle 'Shougo/unite-outline'
+
+  " Molokai主题
+  " https://github.com/tomasr/molokai
+  NeoBundle 'tomasr/molokai'
+
+  " 左侧导航栏 --- 快捷键（,.）
+  " https://github.com/scrooloose/nerdtree
+  NeoBundle 'scrooloose/nerdtree'
 
   " Git命令
-  Plugin 'tpope/vim-fugitive'
+  " https://github.com/tpope/vim-fugitive
+  NeoBundle 'tpope/vim-fugitive'
 
-  " Git文件状态
-  Plugin 'airblade/vim-gitgutter'
+  " Git前台文件添加/修改状态
+  " https://github.com/tpope/vim-gitgutter
+  NeoBundle 'airblade/vim-gitgutter'
 
-  " 自动补全 - 配置文件
-  Plugin 'Shougo/neocomplete.vim'
+  " 自动补全 --- 配置文件
+  NeoBundle 'Shougo/neocomplete.vim'
 
   " 括号补全
-  Plugin 'jiangmiao/auto-pairs'
+  NeoBundle 'jiangmiao/auto-pairs'
 
-  " 历史记录
-  Plugin 'Shougo/unite.vim'
-  Plugin 'Shougo/neomru.vim'
-  Plugin 'Shougo/unite-outline'
+  " 当前文件搜索 --- 配置文件
+  NeoBundle 'Lokaltog/vim-easymotion'
 
   " Ruby语法高亮
-  Plugin 'vim-ruby/vim-ruby'
+  NeoBundle 'vim-ruby/vim-ruby'
 
   " Rails文件跳转
-  Plugin 'tpope/vim-rails'
+  NeoBundle 'tpope/vim-rails'
 
-  " HTML
-  Plugin 'mattn/emmet-vim'
+  " HTML补全
+  NeoBundle 'mattn/emmet-vim'
 
-  " AG搜索
-  Plugin 'rking/ag.vim'
-  
-  " IF代码补全 - 有配置项
-  Plugin 'Shougo/neosnippet-snippets'
-  Plugin 'honza/vim-snippets'
+  " 代码补全 - 有配置项
+  NeoBundle 'Shougo/neosnippet-snippets'
+  NeoBundle 'honza/vim-snippets'
 
-  " 注释
-  Plugin 'tomtom/tcomment_vim'
+  " 文件注释
+  NeoBundle 'tomtom/tcomment_vim'
 
   " 状态栏
-  Plugin 'bling/vim-airline'
+  NeoBundle 'bling/vim-airline'
 
   " Tag
-  Plugin 'majutsushi/tagbar'
+  NeoBundle 'majutsushi/tagbar'
 
   " 代码补全
-  Plugin 'SirVer/ultisnips'
+  NeoBundle 'SirVer/ultisnips'
 
-  " 搜索
-  Plugin 'Lokaltog/vim-easymotion'
 
   " 替换字符
-  Plugin 'tpope/vim-surround'
+  NeoBundle 'tpope/vim-surround'
 
   " HTML Tag
-  Plugin 'gregsexton/MatchTag'
+  NeoBundle 'gregsexton/MatchTag'
 
   " HTML跳转
-  Plugin 'vim-scripts/matchit.zip'
+  NeoBundle 'vim-scripts/matchit.zip'
 
   " Sublime 
-  Plugin 'terryma/vim-multiple-cursors'
-  Plugin 'terryma/vim-expand-region'
+  NeoBundle 'terryma/vim-multiple-cursors'
+  NeoBundle 'terryma/vim-expand-region'
 
   " syntax
-  Plugin 'groenewege/vim-less'
-  Plugin 'plasticboy/vim-markdown'
-  Plugin 'vim-scripts/phpvim'
-  Plugin 'othree/html5.vim'
-  Plugin 'pangloss/vim-javascript'
-  Plugin 'othree/javascript-libraries-syntax.vim'
-  Plugin 'kchmck/vim-coffee-script'
-  Plugin 'markwu/vim-laravel4-snippets'
-  Plugin 'xsbeats/vim-blade'
+  NeoBundle 'groenewege/vim-less'
+  NeoBundle 'plasticboy/vim-markdown'
+  NeoBundle 'vim-scripts/phpvim'
+  NeoBundle 'othree/html5.vim'
+  NeoBundle 'pangloss/vim-javascript'
+  NeoBundle 'othree/javascript-libraries-syntax.vim'
+  NeoBundle 'kchmck/vim-coffee-script'
+  NeoBundle 'markwu/vim-laravel4-snippets'
+  NeoBundle 'xsbeats/vim-blade'
   
 
 
-call vundle#end()
+call neobundle#end()
 " End - 下载插件
 
 
@@ -122,7 +141,11 @@ set title
 set hidden
 set completeopt=longest,menuone,preview
 set nostartofline
-set scrolljump=10
+
+set nocursorline
+set nocursorcolumn
+set scrolljump=5
+
 set nofoldenable
 set autochdir
 set autoread
@@ -162,7 +185,6 @@ set wildignore+=*CACHE
 
 set cursorline
 set nojoinspaces
-" set paste
 set nobomb
 set noerrorbells
 
@@ -174,7 +196,6 @@ set noswapfile
 
 set expandtab
 
-" set mouse=a
 
 set enc=utf-8
 set termencoding=utf-8
@@ -213,10 +234,8 @@ set pastetoggle=<F2>
 
 " Begin - 快捷键绑定
 let mapleader = ','
-
 noremap <leader>. :NERDTreeToggle<CR>
 noremap <leader>t :TlistToggle<CR>
-noremap <leader>h :Unite file_mru<CR>
 noremap <leader>rc :e $MYVIMRC<CR>
 noremap <leader>rrc :source $MYVIMRC<CR>
 noremap <leader>s :%s//g<left><left>
@@ -272,7 +291,21 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " End - 自动补全
 
+
 " Begin - 配色
 let g:molokai_original = 1
 let g:rehash256 = 1
 " End - 配色
+
+
+" Begin - 文件查找
+let g:unite_source_history_yank_enable = 1
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
+nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+" End - 文件查找
+
