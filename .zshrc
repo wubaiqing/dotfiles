@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="cloud"
 
-ZSH_THEME_TERM_TITLE_IDLE="%m: %~"
+# Cloud主题
+ZSH_THEME="cloud"
 
 # Plugins
 plugins=(
@@ -23,8 +23,6 @@ plugins=(
   git 
   git-flow 
 
-  vundle 
-
   ruby 
   rake 
   rails 
@@ -35,7 +33,6 @@ plugins=(
 
   yii2 
   composer 
-
 )
 
 source $ZSH/oh-my-zsh.sh
