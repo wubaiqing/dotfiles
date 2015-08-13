@@ -1,3 +1,11 @@
+" Author wubaiqing <iUserCenter@gmail.com>
+
+
+
+" ==================================================
+" 插件管理
+" ==================================================
+
 " 不兼容VI模式
 set nocompatible
 
@@ -6,6 +14,7 @@ filetype off
 
 " NeoBundle路径
 set runtimepath+=~/.vim/bundle/neobundle.vim/
+
 
 " Begin - 下载插件
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -159,26 +168,57 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'xsbeats/vim-blade'
 
 call neobundle#end()
-" End - 下载插件
 
+
+
+" ==================================================
+" VIM文档
+" http://vimdoc.sourceforge.net/htmldoc/options.html
+" ==================================================
 
 " 语法高亮
 syntax on
 
-
 " 打开文件类型检测 
 filetype plugin indent on
+
+
+
+" ==================================================
+" Begin - 制表符
+" ==================================================
 
 " 不自动换行
 set nowrap
 
+" TAB转换空格
+set expandtab
+
 " Tab键为2个空格
 set tabstop=2
 
+" 自动缩进时2个空格
+set shiftwidth=2
+
+
+
+" ==================================================
+" End - 制表符
+" ==================================================
+
+" Begin - 兼容
+
+" 不兼容VI模式的退格键
 set backspace=indent,eol,start
-set ttyfast
-set lazyredraw
+
+" End - 兼容
+
+
 set splitbelow
+set shiftround
+
+
+
 set splitright
 set title
 set hidden
@@ -196,8 +236,6 @@ set autoread
 
 set autoindent
 set copyindent
-set shiftwidth=2
-set shiftround
 
 set ignorecase
 set smartcase
@@ -237,7 +275,6 @@ set imsearch=0
 set nobackup
 set noswapfile
 
-set expandtab
 
 
 set enc=utf-8
