@@ -1,13 +1,13 @@
-" ==========================================================
+" ==================================================
 " Author wubaiqing <iUserCenter@gmail.com>
 " https://github.com/wubaiqing/dotfiles/blob/master/.vimrc
-" ==========================================================
+" ==================================================
 
 
 
-" ==========================================================
+" ==================================================
 " 插件管理
-" ==========================================================
+" ==================================================
 
 " 关闭文件类型检测
 filetype off
@@ -73,6 +73,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   " https://github.com/Lokaltog/vim-easymotion
   NeoBundle 'Lokaltog/vim-easymotion'
 
+  " HTML补全
+  " https://github.com/mattn/emmet-vim
+  NeoBundle 'mattn/emmet-vim'
+
   " Ruby语法高亮
   " https://github.com/vim-ruby/vim-ruby
   NeoBundle 'vim-ruby/vim-ruby'
@@ -81,15 +85,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   " https://github.com/tpope/vim-rails
   NeoBundle 'tpope/vim-rails'
 
-  " HTML补全
-  " https://github.com/mattn/emmet-vim
-  NeoBundle 'mattn/emmet-vim'
-
-  " 代码补全 - 有配置项
-  " https://github.com/Shougo/neosnippet-snippets
-  NeoBundle 'Shougo/neosnippet-snippets'
-
-  " 代码补全 - 有配置项
+  " 代码片段 - 配置文件
   " https://github.com/honza/vim-snippets
   NeoBundle 'honza/vim-snippets'
 
@@ -101,11 +97,11 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   " https://github.com/bling/vim-airline
   NeoBundle 'bling/vim-airline'
 
-  " Tag
+  " Tag - 配置文件
   " https://github.com/majutsushi/tagbar
   NeoBundle 'majutsushi/tagbar'
 
-  " 代码补全
+  " 代码补全 - 配置文件
   " https://github.com/SirVer/ultisnips
   NeoBundle 'SirVer/ultisnips'
 
@@ -113,7 +109,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   " https://github.com/tpope/vim-surround
   NeoBundle 'tpope/vim-surround'
 
-  " HTML Tag
+  " HTML Tag高亮
   " https://github.com/gregsexton/MatchTag
   NeoBundle 'gregsexton/MatchTag'
 
@@ -125,15 +121,15 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   " https://github.com/terryma/vim-multiple-cursors
   NeoBundle 'terryma/vim-multiple-cursors'
 
-  " Sublime 
+  " 选择区块 - 有配置文件
   " https://github.com/terryma/vim-expand-region
   NeoBundle 'terryma/vim-expand-region'
 
-  " syntax
+  " Less高亮
   " https://github.com/groenewege/vim-less
   NeoBundle 'groenewege/vim-less'
 
-  " syntax
+  " Markdown高亮
   " https://github.com/plasticboy/vim-markdown
   NeoBundle 'plasticboy/vim-markdown'
 
@@ -141,38 +137,34 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   " https://github.com/vim-scripts/phpvim
   NeoBundle 'vim-scripts/phpvim'
 
-  " syntax
+  " HTML5高亮
   " https://github.com/othree/htlm5.vim
   NeoBundle 'othree/html5.vim'
 
-  " syntax
+  " Scss高亮
+  " https://github.com/othree/htlm5.vim
+  NeoBundle 'cakebaker/scss-syntax.vim'
+
+  " Javascript高亮
   " https://github.com/pangloss/vim-javascript
   NeoBundle 'pangloss/vim-javascript'
 
-  " syntax
-  " https://github.com/pangloss/vim-javascript
+  " Javascript扩展库高亮
+  " https://github.com/othree/javascript-libraries-syntax.vim
   NeoBundle 'othree/javascript-libraries-syntax.vim'
 
-  " syntax
+  " CoffeeScript高亮
   " https://github.com/kchmck/vim-coffee-script
   NeoBundle 'kchmck/vim-coffee-script'
-
-  " syntax
-  " https://github.com/markwu/vim-laravel4-snippets
-  NeoBundle 'markwu/vim-laravel4-snippets'
-
-  " syntax
-  " https://github.com/xsbeats/vim-blade
-  NeoBundle 'xsbeats/vim-blade'
 
 call neobundle#end()
 
 
 
-" ==========================================================
+" ==================================================
 " VIM文档
 " http://vimdoc.sourceforge.net/htmldoc/options.html
-" ==========================================================
+" ==================================================
 
 " 语法高亮
 syntax on
@@ -182,9 +174,9 @@ filetype plugin indent on
 
 
 
-" ==========================================================
+" ==================================================
 " 兼容模式
-" ==========================================================
+" ==================================================
 
 " 不兼容VI模式
 set nocompatible
@@ -194,9 +186,9 @@ set backspace=indent,eol,start
 
 
 
-" ==========================================================
+" ==================================================
 " 编码
-" ==========================================================
+" ==================================================
 
 " 不设置bom标记
 set nobomb
@@ -224,9 +216,9 @@ language message zh_CN.utf-8
 
 
 
-" ==========================================================
+" ==================================================
 " 行号
-" ==========================================================
+" ==================================================
 
 " 显示行号
 set number
@@ -236,9 +228,9 @@ set numberwidth=2
 
 
 
-" ==========================================================
+" ==================================================
 " TAB定义
-" ==========================================================
+" ==================================================
 
 " 不自动换行
 set nowrap
@@ -265,18 +257,18 @@ set copyindent
 set smarttab
 
 
-" ==========================================================
+" ==================================================
 " 滚动
-" ==========================================================
+" ==================================================
 
 " 光标离开当前显示的内容区域，滚动5行
 set scrolljump=5
 
 
 
-" ==========================================================
+" ==================================================
 " 开发
-" ==========================================================
+" ==================================================
 
 " 代码不折叠
 set nofoldenable
@@ -289,9 +281,9 @@ set hidden
 
 
 
-" ==========================================================
+" ==================================================
 " 搜索
-" ==========================================================
+" ==================================================
 
 " 忽略大小写
 set ignorecase
@@ -300,25 +292,25 @@ set ignorecase
 set smartcase
 
 " 搜索高亮
-set hlsearch 
+" set hlsearch 
 
 " 输入查找内容时VIM就开始匹配
 set incsearch
 
 
 
-" ==========================================================
+" ==================================================
 " 状态栏
-" ==========================================================
+" ==================================================
 
 " 输入的命令在状态栏下方展示
 set showcmd
 
 
 
-" ==========================================================
+" ==================================================
 " 自动补全
-" ==========================================================
+" ==================================================
 
 " 开启补全
 set wildmenu
@@ -341,36 +333,36 @@ set wildignore+=*CACHE
 
 
 
-" ==========================================================
+" ==================================================
 " 高亮
-" ==========================================================
+" ==================================================
 
 " 光标当前行高亮模式
 set cursorline
 
 
 
-" ==========================================================
+" ==================================================
 " 合并
-" ==========================================================
+" ==================================================
 
 " 使用J命令合并时，当前行后面会追加一个空格
 set nojoinspaces
 
 
 
-" ==========================================================
+" ==================================================
 " 提示音
-" ==========================================================
+" ==================================================
 
 " 关闭错误提示音
 set noerrorbells
 
 
 
-" ==========================================================
+" ==================================================
 " 输入法
-" ==========================================================
+" ==================================================
 
 " 默认不使用输入法
 set iminsert=0
@@ -380,9 +372,9 @@ set imsearch=0
 
 
 
-" ==========================================================
+" ==================================================
 " 备份
-" ==========================================================
+" ==================================================
 
 " 保存文件时不进行备份
 set nobackup
@@ -392,9 +384,9 @@ set noswapfile
 
 
 
-" ==========================================================
+" ==================================================
 " 配色
-" ==========================================================
+" ==================================================
 
 " 使用256配色
 set t_Co=256
@@ -404,9 +396,9 @@ colorscheme molokai
 
 
 
-" ==========================================================
+" ==================================================
 " GUI模式
-" ==========================================================
+" ==================================================
 
 " Gvim设置字体
 if has('gui_running')
@@ -427,9 +419,9 @@ if has('gui_running')
 endif
 
 
-" ==========================================================
+" ==================================================
 " 快捷键 - 映射
-" ==========================================================
+" ==================================================
 
 " TF - 设置文件编码
 map tf :set filetype=
@@ -439,10 +431,17 @@ nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 
+" 右侧导航
+nmap <F8> :TagbarToggle<CR>
 
-" ==========================================================
+" 延长选择框
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
+
+
+" ==================================================
 " 快捷键 - 绑定
-" ==========================================================
+" ==================================================
 
 " 绑定键 - ,
 let mapleader = ','
@@ -457,14 +456,27 @@ noremap <leader>rc :e $MYVIMRC<CR>
 noremap <leader>rrc :source $MYVIMRC<CR>
 
 " 替换字符
-noremap <leader>s :%s//g<left><left>
+" noremap <leader>s :%s//g<left><left>
+
+
+" ==================================================
+" 插件 - snipmate - 代码片段
+" ==================================================
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['c'] = 'c'
+let g:snipMate.scope_aliases['vim'] = 'vim'
+let g:snipMate.scope_aliases['ruby'] = 'ruby, rails'
+let g:snipMate.scope_aliases['php'] = 'php, laravel, sym'
+let g:snipMate.scope_aliases['html'] = 'coffee, css'
+let g:snipMate.scope_aliases['python'] = 'python'
+let g:snipMate.scope_aliases['markdown'] = 'markdown'
 
 
 
-" ==========================================================
+" ==================================================
 " 插件 - Neocomplete - 自动补全
-" ==========================================================
-
+" ==================================================
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
@@ -475,7 +487,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+    \ }
 
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
@@ -502,6 +514,7 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby compiler ruby
 
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
@@ -514,17 +527,16 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 
 
-" ==========================================================
+" ==================================================
 " 插件 - Molokai - 配色
-" ==========================================================
-
+" ==================================================
 let g:molokai_original = 1
 let g:rehash256 = 1
 
 
-" ==========================================================
+" ==================================================
 " 插件 - Unite - 文件搜索
-" ==========================================================
+" ==================================================
 let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
@@ -534,3 +546,37 @@ nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outl
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
 nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 
+ 
+" ==================================================
+" 插件 - EasyMotion - 当前文件搜索
+" ==================================================
+map <Leader> <Plug>(easymotion-prefix)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+
+" ==================================================
+" 插件 - Emmet - HTML补全
+" ==================================================
+let g:user_emmet_settings = {
+  \  'php' : {
+  \    'extends' : 'html',
+  \    'filters' : 'c',
+  \  },
+  \  'xml' : {
+  \    'extends' : 'html',
+  \  },
+  \  'haml' : {
+  \    'extends' : 'html',
+  \  },
+  \}
+
+
+" ==================================================
+" 插件 - javascript-libraries-syntax - JS高亮
+" ==================================================
+autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
+autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
