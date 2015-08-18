@@ -450,7 +450,7 @@ noremap <leader>. :NERDTreeToggle<CR>
 " 读取VIM配置文件
 noremap <leader>rc :e $MYVIMRC<CR>
 
-" 引用当前配置文件
+" 应用当前配置文件
 noremap <leader>rrc :source $MYVIMRC<CR>
 
 " 替换字符
@@ -549,6 +549,8 @@ nnoremap <leader>6 :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 " 插件 - EasyMotion - 当前文件搜索
 " ==================================================
 map <Leader>s <Plug>(easymotion-sn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 
 
 " ==================================================
