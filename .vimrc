@@ -427,12 +427,10 @@ endif
 map tf :set filetype=
 
 " 粘贴模式，不自动缩进
-nnoremap <F2> :set invpaste paste?<CR>
-imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 
 " 右侧导航
-nmap <F8> :TagbarToggle<CR>
+nmap <F3> :TagbarToggle<CR>
 
 " 延长选择框
 map K <Plug>(expand_region_expand)
@@ -539,22 +537,18 @@ let g:rehash256 = 1
 " ==================================================
 let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
-nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
-nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
-nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+nnoremap <leader>1 :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <leader>2 :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+nnoremap <leader>3 :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <leader>4 :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nnoremap <leader>5 :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
+nnoremap <leader>6 :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 
  
 " ==================================================
 " 插件 - EasyMotion - 当前文件搜索
 " ==================================================
-map <Leader> <Plug>(easymotion-prefix)
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
+map <Leader>s <Plug>(easymotion-sn)
 
 
 " ==================================================
