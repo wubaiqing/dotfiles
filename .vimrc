@@ -53,6 +53,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   " 左侧导航栏 --- 快捷键（,.） " https://github.com/scrooloose/nerdtree
   NeoBundle 'scrooloose/nerdtree'
 
+  " 快速运行
+  " https://github.com/thinca/vim-quickrun
+  NeoBundle 'thinca/vim-quickrun'
+
   " Git命令
   " https://github.com/tpope/vim-fugitive
   NeoBundle 'tpope/vim-fugitive'
