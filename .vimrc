@@ -553,8 +553,6 @@ nnoremap <leader>6 :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 " 插件 - EasyMotion - 当前文件搜索
 " ==================================================
 map <Leader>s <Plug>(easymotion-sn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
 
 
 " ==================================================
