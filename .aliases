@@ -1,43 +1,21 @@
-# Easier navigation: .., ..., ...., ....., ~ and -
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
+# 开启关闭服务
+# Author wubaiqing <wubaiqing@vip.qq.com>
 
-# grep 
-alias grep="grep --color"
-alias egrep="egrep --color"
-alias fgrep="fgrep --color"
-
-# Shortcuts
-alias h="history"
-
-# List all files colorized in long format
-alias l="ls -l ${colorflag}"
-
-# List all files colorized in long format, including dot files
-alias la="ls -la ${colorflag}"
-
-# List only directories
-alias lsd='ls -l ${colorflag} | grep "^d"'
-
+# Nginx
 alias nginx.start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
 alias nginx.stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
 alias nginx.restart='nginx.stop && nginx.start'
+
+# PHP-FPM
 alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist"
 alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist"
 alias php-fpm.restart='php-fpm.stop && php-fpm.start'
+
+# Mysql
 alias mysql.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist"
 alias mysql.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist"
 alias mysql.restart='mysql.stop && mysql.start'
 
-alias memcache.start='memcached -d -p 11211 -c 1024; memcached -d -p 30001 -c 1024; memcached -d -p 30002 -c 1024; memcached -d -p 40000 -c 1024; memcached -d -p 40100 -c 1024; memcached -d -p 40101 -c 1024; memcached -d -p 40102 -c 1024;'
-alias memcache.clear='echo "flush_all" | nc 127.0.0.1 11211; echo "flush_all" | nc 127.0.0.1 30001; echo "flush_all" | nc 127.0.0.1 30002; echo "flush_all" | nc 127.0.0.1 40000; echo "flush_all" | nc 127.0.0.1 40100; echo "flush_all" | nc 127.0.0.1 40101; echo "flush_all" | nc 127.0.0.1 40102;'
-
-alias redis.start='redis-server --port 7510 &'
-alias elastic.start='elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml &'
-
-
-
+# Memcache
+alias memcache.start='memcached -d -p 11211 -c 1024; memcached -d -p 30001 -c 1024; memcached -d -p 30002 -c 1024; memcached -d -p 40000 -c 1024; memcached -d -p 40100 -c 1024; memcached -d -p 40101 -c 1024; memcached -d -p 40102 -c 1024; memcached -d -p 11211 -c 1024;'
+alias memcache.clear='echo "flush_all" | nc 127.0.0.1 11211; echo "flush_all" | nc 127.0.0.1 30001; echo "flush_all" | nc 127.0.0.1 30002; echo "flush_all" | nc 127.0.0.1 40000; echo "flush_all" | nc 127.0.0.1 40100; echo "flush_all" | nc 127.0.0.1 40101; echo "flush_all" | nc 127.0.0.1 40102; echo "flush_all" | nc 127.0.0.1 40102;'
