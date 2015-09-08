@@ -1,21 +1,58 @@
-# 开启关闭服务
+# 系统别名
 # Author wubaiqing <wubaiqing@vip.qq.com>
 
-# Nginx
+# 目录别名
+alias d="cd ~/Documents/Dropbox"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+
+
+# 获取 OS X 最新软件，并且更新Ruby Gems, Homebrew, npm，以及所有npm依赖
+alias update='softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; npm install npm -g; npm update -g; gem update --system; gem update'
+
+
+# 本机IP
+alias localip="ipconfig getifaddr en0"
+
+
+# 清理重复的打开菜单
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+
+# Finder 显示隐藏文件
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+
+# 隐藏显示桌面图标
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+
+# 开启、关闭 - Spotlight
+alias spoton="sudo mdutil -a -i on"
+alias spotoff="sudo mdutil -a -i off"
+
+
+# 关闭Chrome所有标签，清空Chrome缓存
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+
+# 重启 - Nginx
 alias nginx.start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
 alias nginx.stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
 alias nginx.restart='nginx.stop && nginx.start'
 
-# PHP-FPM
+# 重启 - PHP-FPM
 alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist"
 alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist"
 alias php-fpm.restart='php-fpm.stop && php-fpm.start'
 
-# Mysql
+# 重启 - Mysql
 alias mysql.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist"
 alias mysql.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist"
 alias mysql.restart='mysql.stop && mysql.start'
 
-# Memcache
+# 重启 - Memcache
 alias memcache.start='memcached -d -p 11211 -c 1024; memcached -d -p 30001 -c 1024; memcached -d -p 30002 -c 1024; memcached -d -p 40000 -c 1024; memcached -d -p 40100 -c 1024; memcached -d -p 40101 -c 1024; memcached -d -p 40102 -c 1024; memcached -d -p 11211 -c 1024;'
 alias memcache.clear='echo "flush_all" | nc 127.0.0.1 11211; echo "flush_all" | nc 127.0.0.1 30001; echo "flush_all" | nc 127.0.0.1 30002; echo "flush_all" | nc 127.0.0.1 40000; echo "flush_all" | nc 127.0.0.1 40100; echo "flush_all" | nc 127.0.0.1 40101; echo "flush_all" | nc 127.0.0.1 40102; echo "flush_all" | nc 127.0.0.1 40102;'
