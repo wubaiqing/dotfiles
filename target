@@ -1,0 +1,37 @@
+#!/usr/bin/expect
+
+# Author : wubaiqing <wubaiqing@vip.qq.com>
+
+# 堡垒机服务器信息
+set guard_user [lindex $argv 0]
+set guard_host [lindex $argv 1]
+set guard_password [lindex $argv 2]
+
+# 目标机器服务器信息
+set target_user [lindex $argv 3]
+set target_host [lindex $argv 4]
+set target_password [lindex $argv 5]
+
+# 堡垒机 - SSH连接
+catch {spawn ssh $guard_user@$guard_host}
+expect {
+  "(yes/no)?"
+  {send "yes\r";exp_continue}
+  "password:"
+  {send "$guard_password\r"}
+}
+
+# 目标机器 - SSH连接
+expect "*$guard_user*" {send "ssh $target_user@$target_host\r"}
+expect {
+  "(yes/no)?"
+  {send "yes\r";exp_continue}
+  "*assword:*"
+  {send "$target_password\r"}
+}
+
+# 目标机器 - 登录后执行命令
+expect "*$target_user*" {
+  send "cd ~; clear;\r";
+  interact
+}
