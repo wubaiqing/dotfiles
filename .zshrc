@@ -80,9 +80,14 @@ plugins=(
 
   bower 
 
+  docker
+
   yii2 
   composer 
   phpunit  
+
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 # User configuration
