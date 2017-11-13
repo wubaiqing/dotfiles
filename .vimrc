@@ -352,6 +352,7 @@ set imsearch=0
 
 " 保存文件时不进行备份
 set nobackup
+set backupext=.bak
 
 " 不使用swp文件 
 set noswapfile
