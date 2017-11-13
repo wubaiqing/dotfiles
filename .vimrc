@@ -152,6 +152,8 @@ syntax on
 " 打开文件类型检测 
 filetype plugin indent on
 
+" 换行模式
+set fileformats=unix
 
 
 " ==================================================
